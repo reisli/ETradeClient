@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
 import { AlertifyService, MessageType, Position } from 'src/app/services/admin/alertify.service';
 
 @Component({
@@ -6,17 +8,13 @@ import { AlertifyService, MessageType, Position } from 'src/app/services/admin/a
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent extends BaseComponent {
 
-  constructor(private alertifyService:AlertifyService) {
-    
+  constructor(spinner:NgxSpinnerService){
+    super(spinner)
   }
-
-  A(){
-    this.alertifyService.message("Helloooo",{delay:4,messageType:MessageType.Warning,position:Position.BottomCenter,dismissOthers:true})
-  }
-  D(){
-    this.alertifyService.dismissAll()
+  ngOnInit(): void {
+    this.showSpinner(SpinnerType.BallScaleMultiple)
   }
 
 }

@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { AdminModule } from './admin/admin.module';
 import { UiModule } from './ui/ui.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { BaseComponent } from './base/base.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule,UiModule, BrowserAnimationsModule
+    AdminModule,UiModule, BrowserAnimationsModule,
+    ToastrModule.forRoot(),NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

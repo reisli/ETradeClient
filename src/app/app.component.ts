@@ -10,8 +10,8 @@ export class AppComponent {
 
   title = 'ETradeClient';
 
-  constructor(private toastrService:CustomToastrService){
-    toastrService.message("Hello World","Rais",{messageType:ToastrMessageType.Info,position:ToastrPosition.BottomFullWidth})
+  constructor(){
+   
   }
   
 }
